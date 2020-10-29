@@ -1,5 +1,5 @@
 const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 const makeTransaction = (transaction) => {
@@ -7,14 +7,14 @@ const makeTransaction = (transaction) => {
         const delay = randomIntegerFromInterval(200, 500);
 
         setTimeout(() => {
-    const canProcess = Math.random() > 0.3;
+          const canProcess = Math.random() > 0.3;
 
-    if (canProcess) {
-      resolve({ id:transaction.id, time:delay });
-    } else {
-      reject(transaction.id);
-    }
-  }, delay);
+          if (canProcess) {
+            resolve({ id:transaction.id, time:delay });
+          } else {
+            reject(transaction.id);
+          }
+        }, delay);
     })
 };
 
